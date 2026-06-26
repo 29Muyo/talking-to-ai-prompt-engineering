@@ -1,6 +1,6 @@
 # Talking to AI: How to Write Prompts That Actually Work
 
-**Speaker:** Kathleen Muyoni
+**Speaker:** Kathleen Muyoni 
 **Event:** Build With AI Learning Series 2026 — Tambua Women in Tech
 **In Partnership With:** Flutter Kisumu & GDG Kisii
 **Date:** June 27, 2026
