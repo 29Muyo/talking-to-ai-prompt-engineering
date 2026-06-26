@@ -18,15 +18,11 @@
 
 ---
 
-## My Story
+## In Practice
 
-How many of you have typed a prompt, gotten a response that wasn't quite right, then typed another... and another — going back and forth multiple times before finally getting what you actually wanted?
+How many of you have typed a prompt, gotten a response that wasn't quite right, then typed another... and another. You have gone back and forth multiple times before finally getting what you actually wanted?
 
-I'll give you my own example. While working through AWS Solutions Architect lab sessions, I would feed an entire project guideline into AI expecting a clean, step-by-step solution back. Sometimes I'd follow that output carefully, submit my lab — and score 50 out of 100.
 
-The AI wasn't wrong exactly. My prompt just wasn't organized enough to get the precision that lab actually needed.
-
-Today, I'm going to show you how to organize your prompts so you're not leaving your results to chance.
 
 ---
 
@@ -71,63 +67,47 @@ Some lab guidelines had multiple parts — architecture design, security, cost o
 
 ## Prompt Engineering Techniques
 
-### Zero-Shot Prompting
-Asking AI directly with no examples.
+### 1) Zero-shot prompting
+- Ask the AI to do a task with no examples.
+- Best for simple, direct requests.
+- Fast, but less controlled.
 
-```
-"Solve this AWS lab and give me the steps."
-```
-Works for simple, common questions. Often too generic for technical or graded work.
+**Example:**  
+Write a warm WhatsApp invite for women in tech in Nairobi to attend a Saturday AI session. Keep it under 40 words.
 
-### Few-Shot Prompting
-Giving AI one or two examples of the format/depth you want BEFORE your actual question.
+**Quick check:**  
+What might happen if the prompt is too vague?
 
-```
-"Here's an example of how I want my answer 
-structured: [example]. Now apply this same 
-structure to solve this lab."
-```
+### 2) Few-shot prompting
+- Give the AI a few examples first.
+- Best for tone, style, and format.
+- More consistent than zero-shot.
 
-### Chain of Thought Prompting
-Asking AI to reason step-by-step before giving a final answer.
+**Example:**  
+Here are two sample invites:  
+1. Hi everyone, join us this Saturday for a practical AI session.  
+2. Hello ladies in tech, come learn AI with us this weekend.  
 
-```
-"Walk me through your reasoning step-by-step 
-before giving me the final architecture 
-recommendation."
-```
+Now write a new WhatsApp invite for women in tech in Nairobi.
 
-**Quick comparison:**
+**Quick check:**  
+What changed when examples were added?
 
-| Technique | Best For |
-|---|---|
-| Zero-shot | Fast, simple tasks |
-| Few-shot | When format/precision matters |
-| Chain of Thought | Multi-step reasoning problems |
+### 3) Chain-of-thought prompting
+- Ask the AI to think step by step.
+- Best for decisions, planning, and debugging.
+- Useful for complex tasks.
 
----
+**Example:**  
+Think step by step about the best words, tone, audience needs, and call to action for a women-in-tech event. Then write the final invite.
 
-## Practice Scenarios
+**Quick check:**  
+What kind of tasks need step-by-step thinking?
 
-Try these before checking the answers below!
-
-**Scenario 1:**
-You need AI to convert 50°C to Fahrenheit right now, for a WhatsApp message to a friend. Which technique fits — and why?
-
-**Scenario 2:**
-Your manager wants 5 social media captions in a very specific tone — witty, short, under 10 words, ending with an emoji. Which technique fits best?
-
-**Scenario 3:**
-You're debugging why your Docker container keeps crashing after running fine for 10 minutes. A generic "why is my container crashing?" prompt isn't helping. What technique should you switch to?
-
-<details>
-<summary>Click to reveal answers</summary>
-
-1. **Zero-shot** — simple, fast, no examples needed.
-2. **Few-shot** — "specific tone" is hard to describe in words alone; examples work better.
-3. **Chain of Thought** — debugging needs systematic reasoning through multiple possible causes.
-
-</details>
+## Crosscheck answers
+- Zero-shot: Quick, simple, less control.
+- Few-shot: Better tone and structure.
+- Chain-of-thought: Better for reasoning and decisions.
 
 ---
 
