@@ -116,7 +116,7 @@ Think step by step about the best words, tone, audience needs, and call to actio
 ## Practice Scenarios
 
 **Scenario 1:**
-You need AI to convert 50°C to Fahrenheit right now, for a WhatsApp message to a friend. Which technique fits and why?
+You need AI to quickly draft a one-line WhatsApp reply confirming a customer's order has been received. Which technique fits?
 
 **Scenario 2:**
 Your manager wants 5 social media captions in a very specific tone: witty, short, under 10 words, ending with an emoji. Which technique fits best?
