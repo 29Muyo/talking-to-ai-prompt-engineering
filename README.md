@@ -10,7 +10,6 @@
 
 ## Table of Contents
 1. [Quick Scenario](#quick-scenario)
-2. ![Project Architecture](images/your-image.png)
 3. [Best Practices for Prompts](#best-practices-for-prompts)
 4. [Prompt Engineering Techniques](#prompt-engineering-techniques)
 5. [Practice Scenarios](#practice-scenarios)
