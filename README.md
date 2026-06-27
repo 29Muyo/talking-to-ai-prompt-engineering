@@ -127,9 +127,9 @@ Your phone's mobile money app keeps freezing whenever you try to send money, but
 <details>
 <summary>Click to reveal answers</summary>
 
-1. **Zero-shot** — simple, fast, no examples needed.
-2. **Few-shot** — "specific tone" is hard to describe in words alone; examples work better.
-3. **Chain of Thought** — debugging needs systematic reasoning through multiple possible causes.
+1. **Zero-shot** -simple, fast, no examples needed.
+2. **Few-shot** -"specific tone" is hard to describe in words alone; examples work better.
+3. **Chain of Thought** -debugging needs systematic reasoning through multiple possible causes.
 
 </details>
 
