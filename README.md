@@ -9,7 +9,7 @@
 ---
 
 ## Table of Contents
-1. [My Story](#my-story)
+1. [Quick Scenario](#quick-scenario)
 2. [Best Practices for Prompts](#best-practices-for-prompts)
 3. [Prompt Engineering Techniques](#prompt-engineering-techniques)
 4. [Practice Scenarios](#practice-scenarios)
@@ -18,31 +18,31 @@
 
 ---
 
-## My Story
+## Quick Scenario
 
-Think about any project you're working on right now — or one you want to start. A business idea, a school assignment, a small app, even something as personal as planning an event. At some point, you've probably turned to AI for help figuring out where to start, how to continue, or which direction to take next.
+Think about any project you're working on right now or any you want to start. A business idea, a school assignment, a small app or even something as personal. At some point, you've probably turned to AI for: figuring out where to start, how to continue, or which direction to take next.
 
-I want to share a real moment from my own project — a Construction Tender Automation System I built on AWS — where I got my prompting completely wrong, and what it taught me.
+So, there was this time I was working on a Construction Tender Automation System on AWS. There was a point I got my prompting completely wrong.
 
 Back in an early phase, I set up a database table for contractor information. Simple enough. Later, I asked AI to write code to read from that table. The code came back clean, confident, ready to go.
 
 It crashed immediately. `ResourceNotFoundException: Requested resource not found`.
 
-What had happened? Somewhere between setting up that table and asking for the code, the actual table name and structure had changed slightly — different casing, different key name. But AI didn't know that. It wrote code based on what was **recommended** earlier in our conversation, not what **actually existed** in my AWS account at that moment.
+What had happened? Somewhere between setting up that table and asking for the code, the actual table name and structure had changed slightly- different casing, different key name. But AI didn't know that. It wrote code based on what was **recommended** earlier in our conversation, not what **actually existed** in my AWS account at that moment.
 
-It took 4 to 5 back-and-forth attempts just to figure out the mismatch existed — before we could even fix the real problem.
+It took more than 3 attempts to figure out the mismatch existed, before I could fix the problem.
 
-**Here's the lesson:** AI doesn't know your current reality unless you tell it. It will fill gaps with its best guess — and best guesses about YOUR specific situation are exactly where things break.
+**Here's the lesson:** AI doesn't know your current reality unless you tell it. It will fill gaps with its best guess(hallucinations) and best guesses about YOUR specific situation are where things break.
 
-### The Redemption Moment
+### Making it Work
 
-Later in that same project, I caught myself making a similar mistake — asking for fragmented, step-by-step edits to code without sharing what my code actually looked like at that point.
+Later in that same project, I caught myself making a similar assumption, asking for fragmented, step-by-step edits to code without sharing what my code actually looked like at that point.
 
 I stopped, and instead said: *"Here's my current full function. Update it to add this."*
 
 One clean, accurate response. Zero mismatch. Worked first try.
 
-That shift — from assuming AI remembers your context, to actively handing it your current reality — is exactly what we're covering today.
+From assuming AI remembers your context, to actively handing it your current reality — is exactly what we're covering today.
 
 **The one-line principle to remember:**
 > An AI is only as accurate as the ground truth you give it. Specificity beats memory, every time.
@@ -179,31 +179,17 @@ AI accidentally revealing confidential system instructions or data.
 ### Poisoning
 Corrupting the data AI learns from, so it produces harmful or biased outputs.
 
-> **Real example:** In 2024, researchers showed public websites AI tools browse could be deliberately filled with false information, which the AI would treat as fact.
+> In 2024, researchers showed public websites AI tools browse could be deliberately filled with false information, which the AI would treat as fact.
 
-> Responsible prompting isn't just about getting better outputs. It's about understanding the boundaries that keep AI safe and trustworthy for everyone.
+> Responsible prompting is about understanding the boundaries that keep AI safe and trustworthy for everyone.
 
 ---
 
-## Key Takeaway
-
-Prompting isn't about finding one perfect formula. It's about recognizing **what problem you're solving** — and choosing the right approach for that moment.
+#Key Takeaway
 
 Next time AI gives you a response that isn't quite right, ask yourself:
 
 > Is this a context problem, a format problem, or a complexity problem?
 
-That question alone will save you several rounds of back and forth.
 
 ---
-
-## About Me
-
-**Kathleen Muyoni**
-AWS Certified Cloud Practitioner | AWS AI & ML Scholar | Technical Writer
-
-- 🔗 LinkedIn: [linkedin.com/in/kathleen-muyoni](https://linkedin.com/in/kathleen-muyoni)
-- 🐙 GitHub: [github.com/29Muyo](https://github.com/29Muyo)
-- ✍️ Medium: [Your Medium Link Here]
-
-*Thank you for having me at Build With AI 2026! 💜*
