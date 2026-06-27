@@ -1,6 +1,6 @@
 # Talking to AI: How to Write Prompts That Actually Work
 
-**Speaker:** Kathleen Muyoni 
+**Speaker:** Kathleen Muyoni
 **Event:** Build With AI Learning Series 2026 — Tambua Women in Tech
 **In Partnership With:** Flutter Kisumu & GDG Kisii
 **Date:** June 27, 2026
@@ -18,31 +18,54 @@
 
 ---
 
-## In Practice
+## My Story
 
-How many of you have typed a prompt, gotten a response that wasn't quite right, then typed another... and another. You have gone back and forth multiple times before finally getting what you actually wanted?
+Think about any project you're working on right now — or one you want to start. A business idea, a school assignment, a small app, even something as personal as planning an event. At some point, you've probably turned to AI for help figuring out where to start, how to continue, or which direction to take next.
 
+I want to share a real moment from my own project — a Construction Tender Automation System I built on AWS — where I got my prompting completely wrong, and what it taught me.
 
+Back in an early phase, I set up a database table for contractor information. Simple enough. Later, I asked AI to write code to read from that table. The code came back clean, confident, ready to go.
+
+It crashed immediately. `ResourceNotFoundException: Requested resource not found`.
+
+What had happened? Somewhere between setting up that table and asking for the code, the actual table name and structure had changed slightly — different casing, different key name. But AI didn't know that. It wrote code based on what was **recommended** earlier in our conversation, not what **actually existed** in my AWS account at that moment.
+
+It took 4 to 5 back-and-forth attempts just to figure out the mismatch existed — before we could even fix the real problem.
+
+**Here's the lesson:** AI doesn't know your current reality unless you tell it. It will fill gaps with its best guess — and best guesses about YOUR specific situation are exactly where things break.
+
+### The Redemption Moment
+
+Later in that same project, I caught myself making a similar mistake — asking for fragmented, step-by-step edits to code without sharing what my code actually looked like at that point.
+
+I stopped, and instead said: *"Here's my current full function. Update it to add this."*
+
+One clean, accurate response. Zero mismatch. Worked first try.
+
+That shift — from assuming AI remembers your context, to actively handing it your current reality — is exactly what we're covering today.
+
+**The one-line principle to remember:**
+> An AI is only as accurate as the ground truth you give it. Specificity beats memory, every time.
 
 ---
 
 ## Best Practices for Prompts
 
-Looking back at my AWS lab story, I can now see exactly where things went wrong — and which best practice would have saved me each time.
+Looking back at my Tender Automation Project story, I can now see exactly where things went wrong — and which best practice would have saved me each time.
 
 ### Stage 1 — The Context Problem
 
-I would copy the entire project guideline and paste it into AI, expecting a clean solution back. The problem? I was giving information, but not necessarily the *right* information, organized clearly.
+I asked AI to write code for my database table without confirming the table's actual current name and structure. The problem? I assumed AI remembered details from earlier in our conversation, instead of giving it my current ground truth.
 
 **Best practices that apply:**
 - Be clear and concise
 - Include context if needed
 
-These balance each other — give enough context for AI to understand the situation, but stay specific about what you actually need.
+These balance each other — give enough context for AI to understand your CURRENT reality, not just what was discussed earlier, but stay specific about what you actually need.
 
 ### Stage 2 — The Format Problem
 
-Even when my context was right, I'd still score low — because my output didn't match how the lab was actually graded.
+Even with the right intention, my early fragmented prompts — asking for small edits without sharing my full current code — led to mismatched, error-prone responses.
 
 **Best practices that apply:**
 - Use directives for the appropriate response type
@@ -51,7 +74,7 @@ Even when my context was right, I'd still score low — because my output didn't
 
 ### Stage 3 — The Complexity Problem
 
-Some lab guidelines had multiple parts — architecture design, security, cost optimization — all at once. Asking for everything in one prompt often gave a rushed, incomplete answer.
+My project had multiple moving parts — database setup, Lambda functions, compliance logic — all built across different sessions. Asking for help without re-establishing current context each time caused real confusion.
 
 **Best practices that apply:**
 - Start prompts with an interrogation
@@ -67,47 +90,70 @@ Some lab guidelines had multiple parts — architecture design, security, cost o
 
 ## Prompt Engineering Techniques
 
-### 1) Zero-shot prompting
-- Ask the AI to do a task with no examples.
-- Best for simple, direct requests.
-- Fast, but less controlled.
+### Zero-Shot Prompting
+Asking AI directly with no examples.
 
-**Example:**  
-Write a warm WhatsApp invite for women in tech in Nairobi to attend a Saturday AI session. Keep it under 40 words.
+```
+"Write code to read my contractor table."
+```
+Works for simple, common questions. Often too generic for technical work where details matter.
 
-**Quick check:**  
-What might happen if the prompt is too vague?
+### Few-Shot Prompting
+Giving AI one or two examples of the format/depth you want BEFORE your actual question.
 
-### 2) Few-shot prompting
-- Give the AI a few examples first.
-- Best for tone, style, and format.
-- More consistent than zero-shot.
+```
+"Here's an example of how I want my code 
+documented: [example]. Now apply this same 
+structure to my Lambda function."
+```
 
-**Example:**  
-Here are two sample invites:  
-1. Hi everyone, join us this Saturday for a practical AI session.  
-2. Hello ladies in tech, come learn AI with us this weekend.  
+### Chain of Thought Prompting
+Asking AI to reason step-by-step before giving a final answer.
 
-Now write a new WhatsApp invite for women in tech in Nairobi.
+```
+"Walk me through your reasoning step-by-step 
+before giving me the final architecture 
+recommendation."
+```
 
-**Quick check:**  
-What changed when examples were added?
+**Quick comparison:**
 
-### 3) Chain-of-thought prompting
-- Ask the AI to think step by step.
-- Best for decisions, planning, and debugging.
-- Useful for complex tasks.
+| Technique | Best For |
+|---|---|
+| Zero-shot | Fast, simple tasks |
+| Few-shot | When format/precision matters |
+| Chain of Thought | Multi-step reasoning problems |
 
-**Example:**  
-Think step by step about the best words, tone, audience needs, and call to action for a women-in-tech event. Then write the final invite.
+### Before & After — From My Own Project
 
-**Quick check:**  
-What kind of tasks need step-by-step thinking?
+| Weaker Prompt | Stronger Prompt |
+|---|---|
+| "Write code to read my contractor table" | "Here's my exact table name and key from the console: `Tenderapp-contractors`, key `ContractorID`. Write code using these exact names." |
+| "Update my function to add X" | "Here's my current full function. Update it to add X." |
 
-## Crosscheck answers
-- Zero-shot: Quick, simple, less control.
-- Few-shot: Better tone and structure.
-- Chain-of-thought: Better for reasoning and decisions.
+---
+
+## Practice Scenarios
+
+Try these before checking the answers below!
+
+**Scenario 1:**
+You need AI to convert 50°C to Fahrenheit right now, for a WhatsApp message to a friend. Which technique fits — and why?
+
+**Scenario 2:**
+Your manager wants 5 social media captions in a very specific tone — witty, short, under 10 words, ending with an emoji. Which technique fits best?
+
+**Scenario 3:**
+You're debugging why your Docker container keeps crashing after running fine for 10 minutes. A generic "why is my container crashing?" prompt isn't helping. What technique should you switch to?
+
+<details>
+<summary>Click to reveal answers</summary>
+
+1. **Zero-shot** — simple, fast, no examples needed.
+2. **Few-shot** — "specific tone" is hard to describe in words alone; examples work better.
+3. **Chain of Thought** — debugging needs systematic reasoning through multiple possible causes.
+
+</details>
 
 ---
 
